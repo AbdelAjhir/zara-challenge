@@ -1,0 +1,28 @@
+@use "@/scss/" as *;
+
+.header {
+  height: 80px;
+
+  &__nav {
+    @include flex(space-between, center);
+    height: 100%;
+  }
+
+  &__logo img {
+    height: 32px;
+  }
+
+  &__cart {
+    @include flex(center, center);
+    gap: 10px;
+
+    &-icon {
+      width: 18px;
+    }
+
+    &-count {
+      font-size: 16px;
+      margin-top: 5px;
+    }
+  }
+}

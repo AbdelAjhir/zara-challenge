@@ -1,0 +1,69 @@
+@use "@/scss/" as *;
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+
+  @include tablet {
+    justify-content: unset;
+  }
+
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    button {
+      font-size: 1.6rem;
+    }
+  }
+
+  &__continue-shopping {
+    @include mobile {
+      width: 100%;
+    }
+
+    button {
+      @include mobile {
+        width: 100%;
+      }
+    }
+  }
+
+  &__total {
+    display: flex;
+    width: 40%;
+    text-transform: uppercase;
+
+    @include tablet {
+      flex: 3;
+      width: unset;
+    }
+
+    @include mobile {
+      width: 100%;
+      flex-direction: column;
+      gap: 3rem;
+      font-size: 1.6rem;
+    }
+
+    &-total {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+    }
+
+    &-pay {
+      width: 100%;
+      button {
+        width: 100%;
+      }
+      @include mobile {
+        padding-bottom: 30px;
+      }
+    }
+  }
+}

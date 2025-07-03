@@ -1,0 +1,28 @@
+@use "@/scss/" as *;
+
+.specifications {
+  &__list {
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-self: space-between;
+
+    &-item {
+      display: flex;
+      min-height: 47px;
+      align-items: center;
+      border-bottom: 1px solid $black;
+
+      &-title {
+        flex: 2;
+        font-weight: 400;
+        text-transform: uppercase;
+      }
+      &-value {
+        flex: 3;
+        font-size: 12px;
+      }
+    }
+  }
+}

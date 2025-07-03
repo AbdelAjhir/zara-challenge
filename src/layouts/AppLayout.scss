@@ -1,0 +1,204 @@
+@use "../scss/" as *;
+
+@font-face {
+  font-family: Helvetica;
+  src: url("../fonts/HelveticaNeue-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Helvetica-Bold";
+  src: url("../fonts/HelveticaNeue-Bold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  font-size: 100%;
+
+  @include tablet {
+    font-size: 80%;
+  }
+
+  @include mobile {
+    font-size: 60%;
+  }
+}
+
+body {
+  min-height: 100vh;
+  font-family: $font-family;
+  background-color: $body-bg;
+  color: $black;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@media (hover: hover) {
+  a:hover {
+    color: $black;
+  }
+}
+
+button,
+input {
+  outline: 0;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  overflow-wrap: break-word;
+}
+
+section {
+  padding-bottom: 104px;
+
+  @include mobile {
+    padding-bottom: 50px;
+  }
+}
+
+.main {
+  max-width: $desktop-width;
+  margin: 0 auto;
+
+  @include tablet {
+  }
+
+  @include mobile {
+  }
+}
+
+.container {
+  max-width: $desktop-width-container;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 0 6rem;
+
+  @include tablet {
+    max-width: $tablet-width-container;
+    padding: 0 2rem;
+  }
+
+  @include mobile {
+    max-width: $mobile-width-container;
+    padding: 0 1rem;
+  }
+}
+
+.wrapper {
+  max-width: $desktop-width-wrapper;
+  margin: 0 auto;
+
+  @include tablet {
+    max-width: $tablet-width-wrapper;
+  }
+
+  @include mobile {
+    max-width: $mobile-width-wrapper;
+  }
+}
+
+.page {
+  padding-top: 48px;
+  padding-bottom: 48px;
+  height: 100%;
+
+  @include mobile {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+.cart-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 90vh;
+
+  @include tablet {
+    min-height: 85vh;
+  }
+}
+
+.cart-payment-wrapper {
+  margin-top: auto;
+}
+
+.cart-payment {
+  margin-top: auto;
+}
+
+.not-found-page {
+  gap: 2rem;
+
+  .error-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .error-actions {
+    display: flex;
+    gap: 2rem;
+  }
+}
+
+.error {
+  color: $red;
+  font-size: 1.1rem;
+
+  @include tablet {
+    font-size: 1.2rem;
+  }
+
+  @include mobile {
+    font-size: 1.8rem;
+  }
+}
+
+.error-boundary {
+  padding: 32px;
+  text-align: center;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  pre {
+    color: $red;
+  }
+}

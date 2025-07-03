@@ -1,0 +1,91 @@
+{
+  "name": "zara-challenge",
+  "description": "Aplicación web enfocada en la visualización, búsqueda y gestión de un catálogo de teléfonos móviles",
+  "author": "Abdelbari Ajhir",
+  "homepage": "https://zara-challenge.ajhir.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AbdelAjhir/zara-challenge.git"
+  },
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node ./scripts/checkEnv.mjs && vite",
+    "clean": "rm -rf dist node_modules/.vite",
+    "format": "prettier --check \"src/**/*.{ts,tsx,js,jsx,scss}\"",
+    "format:fix": "prettier --write \"src/**/*.{ts,tsx,js,jsx,scss}\"",
+    "lint": "eslint . --ext ts,tsx --max-warnings=0",
+    "lint:fix": "eslint . --ext ts,tsx --max-warnings=0 --fix",
+    "typecheck": "tsc --build --noEmit",
+    "test": "vitest",
+    "test:e2e": "playwright test",
+    "test:coverage": "vitest --coverage",
+    "test:ui": "vitest --ui",
+    "build": "tsc -b && vite build",
+    "check:all": "npm run format && npm run lint && npm run typecheck",
+    "fix:all": "npm run format:fix && npm run lint:fix",
+    "validate": "npm run check:all && npm run build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.81.5",
+    "axios": "^1.10.0",
+    "framer-motion": "^12.20.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-error-boundary": "^6.0.0",
+    "react-loading-skeleton": "^3.5.0",
+    "react-router-dom": "^7.6.3",
+    "zod": "^3.25.67"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.29.0",
+    "@playwright/test": "^1.53.2",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/node": "^24.0.7",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react-swc": "^3.10.2",
+    "@vitest/coverage-v8": "^3.2.4",
+    "@vitest/ui": "^3.2.4",
+    "chalk": "^5.4.1",
+    "eslint": "^9.29.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-dom": "^1.52.2",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "eslint-plugin-react-x": "^1.52.2",
+    "globals": "^16.2.0",
+    "husky": "^9.1.7",
+    "jsdom": "^26.1.0",
+    "lint-staged": "^16.1.2",
+    "prettier": "^3.6.2",
+    "sass": "^1.89.2",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.34.1",
+    "vite": "^7.0.0",
+    "vitest": "^3.2.4",
+    "@tanstack/react-query-devtools": "^5.81.5"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write",
+      "tsc --noEmit --project tsconfig.app.json"
+    ],
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{css,scss,json,md}": [
+      "prettier --write"
+    ]
+  }
+}
